@@ -1,0 +1,87 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="row">
+    <div class="alert-success alert"></div>
+    <div class="alert-danger alert"></div>
+    <br />
+    <form class="form-inline" id="GeoLocationForm">
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" name="address" placeholder="Address" width="50%" />
+        </div>
+        <div class="form-group">
+            <label for="radius">Radius (Miles)</label>
+            <input type="number" class="form-control" id="radius" name="radius" placeholder="Radius(miles)" width="50%" />
+        </div>
+        <div class="form-group">
+            <label for="type">Type</label>
+            <select id="type">
+                <option value="accounting">Accounting</option>
+                <option value="airport">Airport</option>
+                <option value="aquarium">Aquarium</option>
+                <option value="atm">Atm</option>
+                <option value="bakery">Bakery</option>
+                <option value="bank">Bank</option>
+                <option value="bar">Bar</option>
+                <option value="cafe">Cafe</option>
+                <option value="campground">Campground</option>
+                <option value="casino">Casino</option>
+                <option value="church">Church</option>
+                <option value="convenience_store">Convenience</option>
+                <option value="courthouse">Courthouse</option>
+                <option value="dentist">Dentist</option>
+                <option value="doctor">Doctor</option>
+                <option value="electrician">Electrician</option>
+                <option value="embassy">Embassy</option>
+                <option value="florist">Florist</option>
+                <option value="gym">Gym</option>
+                <option value="hair_care">Haircare</option>
+                <option value="hospital">Hospital</option>
+                <option value="laundry">Laundry</option>
+                <option value="lawyer">Lawyer</option>
+                <option value="library">Library</option>
+                <option value="locksmith">Locksmith</option>
+                <option value="lodging">Lodging</option>
+                <option value="mosque">Mosque</option>
+                <option value="museum">Museum</option>
+                <option value="painter">Painter</option>
+                <option value="park">Park</option>
+                <option value="parking">Parking</option>
+                <option value="pharmacy">Pharmacy</option>
+                <option value="physiotherapist">Physiotherapist</option>
+                <option value="plumber">Plumber</option>
+                <option value="police">Police</option>
+                <option value="restaurant">Restaurant</option>
+                <option value="rv_park">RV park</option>
+                <option value="school">School</option>
+                <option value="spa">Spa</option>
+                <option value="stadium">Stadium</option>
+                <option value="storage">Storage</option>
+                <option value="store">Store</option>
+                <option value="supermarket">Supermarket</option>
+                <option value="synagogue">Synagogue</option>
+                <option value="zoo">Zoo</option>
+            </select>
+        </div>
+    </form>
+    <br />
+    <div>
+        <input id="submit" type="button" value="Search" />
+        <input id="currloc" type="button" value="Current Location" />
+        <input id="StartRecord" type="button" value="Start Record" />
+        <input type="hidden" id="audioFilename" />
+        <input id="StopRecord" type="button" value="Stop Record" />
+        <span id="Response"></span>
+    </div>
+    <br />
+    <div class="container">
+        <div id="map"></div>
+        <div id="right-panel"></div>
+    </div>
+    <div class="container">
+        <ul class="list-group" id="locations"></ul>
+    </div>
+</div>
